@@ -72,23 +72,43 @@ namespace Snake
         }
 
         // Event handlers for each arrow button to change snake direction
-        private void UpButton_Click(object sender, RoutedEventArgs e)
+        private async void UpButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!gameRunning)
+            {
+                gameRunning = true;
+                await RunGame();
+            }
             gameState.ChangeDirection(Direction.Up);
         }
 
-        private void DownButton_Click(object sender, RoutedEventArgs e)
+        private async void DownButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!gameRunning)
+            {
+                gameRunning = true;
+                await RunGame();
+            }
             gameState.ChangeDirection(Direction.Down);
         }
 
-        private void LeftButton_Click(object sender, RoutedEventArgs e)
+        private async void LeftButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!gameRunning)
+            {
+                gameRunning = true;
+                await RunGame();
+            }
             gameState.ChangeDirection(Direction.Left);
         }
 
-        private void RightButton_Click(object sender, RoutedEventArgs e)
+        private async void RightButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!gameRunning)
+            {
+                gameRunning = true;
+                await RunGame();
+            }
             gameState.ChangeDirection(Direction.Right);
         }
 
